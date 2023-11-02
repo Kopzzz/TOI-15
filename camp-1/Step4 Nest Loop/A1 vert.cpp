@@ -1,0 +1,26 @@
+#include<stdio.h>
+main()
+{
+	int n,r,c,i,j=-1,a;
+	scanf("%d",&n);
+	for(r=n;r>=(n+1)/2;r--)
+	{
+		for(c=0;c<1;c++)
+		{
+			for(a=0;a<n-r;a++)
+			{
+				printf("1");
+			}
+			j++;
+			for(a=0;a<r-j;a++)
+			{
+				printf("A");
+			}
+			for(a=0;a<n-r;a++)
+			{
+				printf("*");
+			}
+		}
+		printf("\n");
+	}
+}

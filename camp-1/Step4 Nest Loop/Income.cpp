@@ -1,0 +1,56 @@
+#include<stdio.h>
+main()
+{
+	int n,a,b,min,max,i,min2,max2,g,count,con=0,m;
+	scanf("%d",&n);
+	for(i=0;i<n;i++)
+	{
+		count=0;
+		for(g=0;g<5;g++)
+		{
+			scanf("%d",&b);
+			count++;
+			if(count==1)
+			{
+				a=b;
+			}
+			if(count==2)
+			{
+				if(b>=a)
+				{
+					max=b;
+					min=a;
+				}
+				else
+				{
+					max=a;
+					min=b;
+				}
+			}
+			if(count>2)
+			{
+				if(b>max)
+					max=b;
+				if(b<min)
+					min=b;
+			}
+			
+		}
+		m=max-min;
+		con++;
+		if(con==1)
+		{
+			max2=m;
+			min2=m;
+		}
+		else
+		{
+			if(m>max2)
+			max2=m;
+			if(m<min2)
+			min2=m;
+		}
+		
+	}
+	printf("%d %d %d",max2,min2,max2-min2);
+}

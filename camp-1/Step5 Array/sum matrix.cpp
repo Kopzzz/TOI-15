@@ -1,0 +1,24 @@
+#include<stdio.h>
+#include<math.h>
+#include<stdlib.h>
+main()
+{
+	int N,n[100][100],r,c,sum=0,d;
+	scanf("%d",&N);
+	for(r=0;r<N;r++)
+	{
+		for(c=0;c<N;c++)
+		{
+			scanf("%d",&n[r][c]);
+		}
+	}
+	for(r=0;r<N;r++)
+	{
+		for(c=r+1;c<N;c++)
+		{
+			d=abs(n[r][c]-n[c][r]);
+			sum+=d;
+		}
+	}
+	printf("%d",sum);
+}

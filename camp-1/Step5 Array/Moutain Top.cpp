@@ -1,0 +1,31 @@
+#include<stdio.h>
+int m[1000][1000],n,i,j,r,c,count=0,peak[100000],kr[100000],kc[1000000];
+main()
+{
+	scanf("%d",&n);
+	for(r=0;r<n;r++)
+	{
+		for(c=0;c<n;c++)
+		{
+			scanf("%d",&m[r][c]);			
+		}
+	}
+	for(r=1;r<n-1;r++)
+	{
+		for(c=1;c<n-1;c++)
+		{
+			if(m[r][c]>m[r][c-1]&&m[r][c]>m[r][c+1]&&m[r][c]>m[r-1][c]&&m[r][c]>m[r-1][c-1]&&m[r][c]>m[r-1][c+1]&&m[r][c]>m[r+1][c]&&m[r][c]>m[r+1][c-1]&&m[r][c]>m[r+1][c+1])
+			{
+				peak[count]=m[r][c];
+				kr[count]=r;
+				kc[count]=c;
+				count++;
+			}
+		}
+	}
+	printf("%d\n",count);
+	for(i=0;i<count;i++)
+	{
+		printf("%d %d %d\n",peak[i],kr[i],kc[i]);
+	}
+}

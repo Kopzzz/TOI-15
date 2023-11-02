@@ -1,0 +1,24 @@
+#include<stdio.h>
+main()
+{
+	int n[50000],N,K,i,j,l[20],sum=0;
+	scanf("%d",&N);
+	for(i=0;i<N;i++)
+	{
+		scanf("%d",&n[i]);
+	}
+	scanf("%d",&K);
+	for(i=0;i<K;i++)
+	{
+		scanf("%d",&l[i]);
+	}
+	for(i=0;i<N;i++)
+	{
+		for(j=0;j<K;j++)
+		{
+			if((n[i]%1000)==l[j])
+				sum++;
+		}
+	}
+	printf("%d",sum);
+}
